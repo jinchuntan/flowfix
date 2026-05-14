@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 import AnalysisDashboard from "@/components/AnalysisDashboard";
 import LoadingAnalysis from "@/components/LoadingAnalysis";
+import BobGuide from "@/components/BobGuide";
 import { scenarios } from "@/lib/mockData";
 import type { AnalysisResult } from "@/lib/types";
 
@@ -156,10 +157,21 @@ export default function Home() {
     setError(null);
   }
 
-  if (loading) return <LoadingAnalysis />;
-  if (result) return <AnalysisDashboard result={result} onReset={handleReset} />;
+  if (loading) return (
+    <>
+      <LoadingAnalysis />
+      <BobGuide stage="loading" />
+    </>
+  );
+  if (result) return (
+    <>
+      <AnalysisDashboard result={result} onReset={handleReset} />
+      <BobGuide stage="result" />
+    </>
+  );
 
   return (
+    <>
     <div className="relative min-h-screen bg-grid">
       {/* Ambient glow blobs */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
@@ -306,7 +318,18 @@ export default function Home() {
         <p className="mt-8 text-center text-xs text-zinc-700">
           No data stored · Runs in-memory only · Open source model
         </p>
+
+        {/* Hackathon badge */}
+        <div className="mt-6 flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-2 text-xs text-blue-400/70">
+            <span className="text-sm">🏆</span>
+            Built for the <span className="font-semibold text-blue-400">IBM Bob Hackathon</span> · $10,000 prize pool
+          </div>
+        </div>
       </div>
     </div>
+
+    <BobGuide stage="home" />
+    </>
   );
 }

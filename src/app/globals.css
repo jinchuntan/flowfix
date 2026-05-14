@@ -49,3 +49,22 @@ body {
 .fade-up-4 { animation-delay: 0.20s; }
 .fade-up-5 { animation-delay: 0.25s; }
 .fade-up-6 { animation-delay: 0.30s; }
+
+/* Bob mascot float */
+@keyframes bobFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+.bob-float {
+  animation: bobFloat 3s ease-in-out infinite;
+}
+
+/* Bob eye blink */
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96%            { transform: scaleY(0.1); }
+}
+.bob-eye {
+  animation: blink 4s ease-in-out infinite;
+  transform-origin: center;
+}
