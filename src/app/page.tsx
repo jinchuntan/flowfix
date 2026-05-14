@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import AnalysisDashboard from "@/components/AnalysisDashboard";
 import LoadingAnalysis from "@/components/LoadingAnalysis";
 import BobGuide from "@/components/BobGuide";
+import FoveaLogo from "@/components/FoveaLogo";
 import { scenarios } from "@/lib/mockData";
 import type { AnalysisResult } from "@/lib/types";
 
@@ -179,7 +180,19 @@ export default function Home() {
         <div className="absolute -right-40 top-1/3 h-80 w-80 rounded-full bg-violet-600/10 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4 pb-20 pt-14 sm:pt-20">
+      {/* Top bar */}
+      <div className="relative border-b border-zinc-800/60 px-6 py-3">
+        <div className="mx-auto flex max-w-3xl items-center justify-between">
+          <span className="text-sm font-bold tracking-tight text-white">FlowFix</span>
+          <div className="flex items-center gap-2 text-zinc-600">
+            <span className="text-xs">by</span>
+            <FoveaLogo size={26} />
+            <span className="text-xs font-medium text-zinc-500">Fovea</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-3xl px-4 pb-20 pt-10 sm:pt-14">
         {/* Hero */}
         <div className="mb-10 text-center fade-up">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-400">

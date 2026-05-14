@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+  <!-- Lightning bolt — FlowFix symbol -->
+  <path d="M19.5 3.5 L10 17.5 H16.5 L12.5 28.5 L23 14 H16.5 Z" fill="white" opacity="0.95"/>
+</svg>
