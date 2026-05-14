@@ -5,6 +5,7 @@ import type { AnalysisResult } from "@/lib/types";
 const SYSTEM_PROMPT = `You are a senior debugging engineer. Analyze the provided log output and repository context, then return a JSON object with this exact shape:
 
 {
+  "severity": "Critical | High | Medium | Low — overall impact of the failure",
   "error_summary": "Short explanation of what failed",
   "workflow_summary": "What the repository/script appears to be trying to do",
   "root_cause_hypotheses": [

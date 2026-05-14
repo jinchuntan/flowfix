@@ -1,6 +1,7 @@
 import type { AnalysisResult } from "./types";
 
 const dockerScenario: AnalysisResult = {
+  severity: "Critical",
   error_summary:
     "Application container failed to start because DATABASE_URL environment variable is not set, causing the database connection to be rejected at boot time.",
   workflow_summary:
@@ -107,6 +108,7 @@ curl http://localhost:3000/health
 };
 
 const pythonScenario: AnalysisResult = {
+  severity: "High",
   error_summary:
     "Python application crashed on import with ModuleNotFoundError. The package 'requests' is used in the code but not listed in requirements.txt, so it was never installed in the environment.",
   workflow_summary:
@@ -212,6 +214,7 @@ python main.py
 };
 
 const permissionScenario: AnalysisResult = {
+  severity: "High",
   error_summary:
     "Shell script failed with 'Permission denied' when attempting to write to /var/log/app. The directory either doesn't exist or the process user lacks write permissions.",
   workflow_summary:

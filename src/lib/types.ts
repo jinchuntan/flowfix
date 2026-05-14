@@ -1,3 +1,5 @@
+export type Severity = "Critical" | "High" | "Medium" | "Low";
+
 export interface RootCauseHypothesis {
   rank: number;
   cause: string;
@@ -14,6 +16,7 @@ export interface FixStep {
 }
 
 export interface AnalysisResult {
+  severity: Severity;
   error_summary: string;
   workflow_summary: string;
   root_cause_hypotheses: RootCauseHypothesis[];
